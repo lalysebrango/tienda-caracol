@@ -11,12 +11,12 @@ package modelos;
  * @author Mia
  */
 public class Articulo {
-     private String ID;
+     private int ID;
      private String nombre;
      private String categoria;
      private boolean estado;
 
-    public Articulo(String ID, String nombre, String categoria) {
+    public Articulo(int ID, String nombre, String categoria) {
         this.ID = ID;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -33,11 +33,11 @@ public class Articulo {
         return estado;
     }
 
-    public String getID() {
+    public int  getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -63,8 +63,11 @@ public class Articulo {
 
     @Override
     public String toString() {
-        return "Articulo{" + "ID=" + ID + ", nombre=" + nombre + ", categoria=" + categoria + ", estado=" + estado + '}';
+        return nombre;
     }
+
+    
+    
      public double precio(double precio){
          return precio;
      }
