@@ -10,6 +10,7 @@ package modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,6 +19,12 @@ import java.util.List;
 public class Tienda {
 
    private List<Articulo> articulos ;
+   private List<Venta> ventas;
+   
+    public Tienda() {
+    }
+   
+   
 
     public Tienda(List<Articulo> articulos) {
         this.articulos = articulos;
@@ -38,16 +45,16 @@ public class Tienda {
      }
     
     
-    public List<Articulo> busqueda(String nombre ){
+    public List<Articulo> busqueda(String categotia ){
         List<Articulo> articulosencontados= new ArrayList<>();
              for (int i = 0;i<articulos.size();i++)
-                 if (nombre.equalsIgnoreCase(articulos.get(i).getNombre()) )
+                 if (categotia.equalsIgnoreCase(articulos.get(i).getCategoria() ) )
                        articulosencontados.add(articulos.get(i));
              return articulosencontados;
              
     }
      public int inventario(String nombre){
-         
+        
          return busqueda(nombre).size();
      }
      public int cantidadVendida(){
@@ -59,7 +66,11 @@ public class Tienda {
      }
      
      public void actualizarEstadoArticulo(boolean estado, int posicion){
-           Articulo a= articulos.get(posicion);
+         
+         Articulo a= articulos.get(posicion);
             a.setEstado(estado);
      }
+
+   
+     
   }

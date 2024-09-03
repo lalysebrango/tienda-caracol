@@ -20,6 +20,9 @@ public class Venta {
     private Date fechadeventa;
     private boolean estadoDeVenta;
 
+    public Venta() {
+    }
+
   
     
     public Venta(String IDventa, Date fechadeventa) {
@@ -56,6 +59,16 @@ public class Venta {
     public void setFechadeventa(Date fechadeventa) {
         this.fechadeventa = fechadeventa;
     }
+    
+      public void addArticulosVendido(Articulo a){
+          articulos.add(a);
+      }
+       //*true--vendida     false-- devuelta*//
+      public void actualizarInventario(int posicion){
+               Articulo a= articulos.get(posicion);
+                if (!estadoDeVenta)
+                    a.setEstado(true);
+      }
 }
  
     

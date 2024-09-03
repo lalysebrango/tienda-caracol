@@ -1,6 +1,6 @@
 
 import modelos.Articulo;
-import modelos.Devolucion;
+
 import modelos.Venta;
 import modelos.Tienda;
 import java.util.ArrayList;
@@ -24,10 +24,10 @@ public class Prueba {
            Tienda t= new Tienda(new ArrayList<>());
                    
            
-            t.addArticulos(new Articulo("125", "Chaqueta", "Zara"));
-            t.addArticulos(new Articulo("124", "Chaqueta", "Zara"));
-            t.addArticulos(new Articulo("128", "Blusa", "Zara"));
-            t.addArticulos(new Articulo("129", "Blusa", "Zara"));
+            t.addArticulos(new Articulo(1, "Chaqueta", "Zara"));
+            t.addArticulos(new Articulo(2, "Chaqueta", "Zara"));
+            t.addArticulos(new Articulo(3, "Blusa", "Zara"));
+            t.addArticulos(new Articulo(4, "Blusa", "Zara"));
             System.out.println(t.busqueda("Blusa"));
             System.out.println(t.inventario("Chaqueta"));
            
@@ -36,10 +36,7 @@ public class Prueba {
            System.out.println(t.cantidadVendida());
            
            
-           Devolucion v= new Devolucion("", null);
-            v.addVentas(new Venta("", null));
-            v.addVentas(new Venta("", null));
-             System.out.println();
+          
         
       
         
