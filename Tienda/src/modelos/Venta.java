@@ -1,75 +1,69 @@
-package modelos;
-
-
-import java.util.Date;
-import java.util.List;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+package modelos;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
- * @author Mia
+ * @author Doralis
  */
 public class Venta {
-    private String IDventa;
-    private List<Articulo> articulos ;
-    private Date fechadeventa;
-    private boolean estadoDeVenta;
+    private String idVenta;
+    private int cantidadVendida; 
+    private Date fechaVenta;     
+    private List<Articulo> articulo = new ArrayList<>(); 
 
-    public Venta() {
-    }
-
-  
-    
-    public Venta(String IDventa, Date fechadeventa) {
-        this.IDventa = IDventa;
-        this.fechadeventa = fechadeventa;
-    }
-      public boolean isEstadoDeVenta() {
-        return estadoDeVenta;
+    public String getIdVenta() {
+        return idVenta;
     }
 
-    public void setEstadoDeVenta(boolean estadoDeVenta) {
-        this.estadoDeVenta = estadoDeVenta;
-    }
-    public String getIDventa() {
-        return IDventa;
+    public List<Articulo> getArticulo() {
+        return articulo;
     }
 
-    public void setIDventa(String IDventa) {
-        this.IDventa = IDventa;
+    public void setArticulo(List<Articulo> articulo) {
+        this.articulo = articulo;
     }
 
-    public List<Articulo> getArticulos() {
-        return articulos;
-    }
-
-    public void setArticulos(List<Articulo> articulos) {
-        this.articulos = articulos;
-    }
-
-    public Date getFechadeventa() {
-        return fechadeventa;
-    }
-
-    public void setFechadeventa(Date fechadeventa) {
-        this.fechadeventa = fechadeventa;
+    public void setIdVenta(String idVenta) {
+        this.idVenta = idVenta;
     }
     
-      public void addArticulosVendido(Articulo a){
-          articulos.add(a);
-      }
-       //*true--vendida     false-- devuelta*//
-      public void actualizarInventario(int posicion){
-               Articulo a= articulos.get(posicion);
-                if (!estadoDeVenta)
-                    a.setEstado(true);
-      }
-}
- 
-    
- 
+    public boolean addArticulo(Articulo a){
+       return articulo.add(a);
+    }
+
+    public Venta(String IDVenta,int cantidadVendida,Date fechaVenta) {
+        this.idVenta = IDVenta;
+        this.cantidadVendida = cantidadVendida;
+        this.fechaVenta = fechaVenta;
+    }
+
+     public void setCantidadVendida(int cantidadVendida) {
+        this.cantidadVendida = cantidadVendida;
+    }
+
+    public void setFechaVenta(Date fechaVenta) {
+       this.fechaVenta = fechaVenta;
+   }
+
+    public int getCantidadVendida() {
+        return cantidadVendida;
+    }
+
+    public Date getFechaVenta() {
+        return fechaVenta;
+    }
+
+    @Override
+    public String toString() {
+        return idVenta ;
+    }
+} 
