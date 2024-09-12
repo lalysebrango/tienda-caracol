@@ -14,7 +14,7 @@ import org.junit.Test;
 public class test1 {
  
        
-    @Test
+   @Test
     public void testAddArticulo() {
         List<Articulo> listaArticulos = new ArrayList<>();
 

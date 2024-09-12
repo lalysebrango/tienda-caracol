@@ -25,6 +25,12 @@ public class Articulo {
         this.inventario = inventario;
     }
 
+    public Articulo(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+    
+
     public String getIdArticulo() {
         return idArticulo;
     }
